@@ -2,7 +2,7 @@ data:extend{
     {
         type = "gun",
         name = "blueprint-shotgun",
-        icon = "__blueprint-shotgun__/graphics/blueprint-shotgun.png",
+        icon = "__blueprint-shotgun-but-with-crash-protection__/graphics/blueprint-shotgun.png",
         icon_size = 64,
         stack_size = 1,
         attack_parameters = {
@@ -19,7 +19,7 @@ data:extend{
     {
         type = "ammo",
         name = "item-canister",
-        icon = "__blueprint-shotgun__/graphics/item-canister.png",
+        icon = "__blueprint-shotgun-but-with-crash-protection__/graphics/item-canister.png",
         icon_size = 64,
         stack_size = 200,
         magazine_size = 25,
@@ -74,7 +74,7 @@ data:extend{
     {
         type = "technology",
         name = "blueprint-shotgun",
-        icon = "__blueprint-shotgun__/graphics/blueprint-shotgun.png",
+        icon = "__blueprint-shotgun-but-with-crash-protection__/graphics/blueprint-shotgun.png",
         icon_size = 64,
         effects = {{
             type = "unlock-recipe",
@@ -96,7 +96,7 @@ data:extend{
         type = "sound",
         name = "blueprint-shotgun-shoot",
         category = "game-effect",
-        filename = "__blueprint-shotgun__/sounds/shoot.wav",
+        filename = "__blueprint-shotgun-but-with-crash-protection__/sounds/shoot.ogg",
         min_speed = 0.95,
         max_speed = 1.05,
         game_controller_vibration_data =
@@ -109,7 +109,7 @@ data:extend{
         type = "sound",
         name = "blueprint-shotgun-vacuum-start",
         category = "game-effect",
-        filename = "__blueprint-shotgun__/sounds/vacuum-start.wav",
+        filename = "__blueprint-shotgun-but-with-crash-protection__/sounds/vacuum-start.ogg",
         game_controller_vibration_data = {
             high_frequency_vibration_intensity = 0.6,
             duration = 100,
@@ -118,7 +118,7 @@ data:extend{
     {
         type = "sprite",
         name = "item-shadow",
-        filename = "__blueprint-shotgun__/graphics/item-shadow.png",
+        filename = "__blueprint-shotgun-but-with-crash-protection__/graphics/item-shadow.png",
         size = 16,
         draw_as_shadow = true,
     } --[[@as data.SpritePrototype]],
@@ -128,7 +128,7 @@ data:extend{
         flags = {"not-on-map", "placeable-off-grid"},
         acceleration = 0.01,
         animation = {
-            filename = "__blueprint-shotgun__/graphics/vacuum-smoke.png",
+            filename = "__blueprint-shotgun-but-with-crash-protection__/graphics/vacuum-smoke.png",
             -- draw_as_glow = true,
             frame_count = 16,
             width = 50,
@@ -159,7 +159,7 @@ for i = 1, 2 do
     data:extend{{
         type = "technology",
         name = "blueprint-shotgun-upgrade-" .. i,
-        icon = "__blueprint-shotgun__/graphics/blueprint-shotgun.png",
+        icon = "__blueprint-shotgun-but-with-crash-protection__/graphics/blueprint-shotgun.png",
         icon_size = 64,
         effects = {{
             type = "nothing",
@@ -185,7 +185,7 @@ for i = 1, 160 do
         type = "sound",
         name = "blueprint-shotgun-vacuum-" .. i,
         category = "game-effect",
-        filename = "__blueprint-shotgun__/sounds/vacuum/vacuum-" .. i .. ".wav",
+        filename = "__blueprint-shotgun-but-with-crash-protection__/sounds/vacuum/vacuum-" .. i .. ".ogg",
         game_controller_vibration_data = {
             low_frequency_vibration_intensity = 0.4,
             duration = 100,
@@ -205,7 +205,7 @@ data:extend{{
         running = util.empty_sprite(),
         running_with_gun = {
             direction_count = 18,
-            filename = "__blueprint-shotgun__/graphics/running-with-gun.png",
+            filename = "__blueprint-shotgun-but-with-crash-protection__/graphics/running-with-gun.png",
             size = 1,
         },
         mining_with_tool = util.empty_sprite(),

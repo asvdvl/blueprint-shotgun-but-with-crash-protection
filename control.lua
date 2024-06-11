@@ -88,7 +88,16 @@ end)
 
 local direction_to_angle = 1 / defines.direction.south * math.pi
 
-script.on_event(e.on_script_trigger_effect, function(event)
+local function trycatch(event, func)
+    local success, err = pcall(func, event)
+    if not success then
+        game.print(err)
+        log(err)
+    end
+end
+
+local function on_script_trigger_effect(event)
+    --here
     if event.effect_id ~= "blueprint-shotgun" then return end
     local surface = game.get_surface(event.surface_index) --[[@as LuaSurface]]
     local character = event.source_entity --[[@as LuaEntity]]
@@ -181,13 +190,21 @@ script.on_event(e.on_script_trigger_effect, function(event)
             data.mode = "build"
         end
     end
+end
+
+script.on_event(e.on_script_trigger_effect, function(event)
+    trycatch(event, on_script_trigger_effect)
 end)
 
-script.on_event(e.on_tick, function(event)
+local function on_tick(event)
     cliffs.on_tick(event)
     render.on_tick(event)
     flying_items.on_tick(event)
     sound.on_tick(event)
+end
+
+script.on_event(e.on_tick, function(event)
+    trycatch(event, on_tick)
 end)
 
 script.on_event(e.on_entity_destroyed, function(event)
