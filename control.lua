@@ -213,7 +213,7 @@ script.on_event(e.on_entity_destroyed, function(event)
     global.to_explode[event.registration_number] = nil
 end)
 
-script.on_event(e.on_surface_deleted, function(event)
+local function on_surface_deleted(event)
     for id, item in pairs(global.flying_items) do
         if item.surface.valid then goto continue end
         global.flying_items[id] = nil
@@ -233,4 +233,8 @@ script.on_event(e.on_surface_deleted, function(event)
 
         ::continue::
     end
+end
+
+script.on_event(e.on_surface_deleted, function(event)
+    trycatch(event, on_surface_deleted)
 end)
