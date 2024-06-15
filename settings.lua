@@ -10,4 +10,9 @@ data:extend{{
     default_value = 0,
     minimum_value = 0,
     maximum_value = 24,
+}, {
+    type = "bool-setting",
+    name = "blueprint-shotgun-wcp-disable-notifications",
+    setting_type = "runtime-global",
+    default_value = false,
 }}

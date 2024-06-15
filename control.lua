@@ -90,7 +90,7 @@ local direction_to_angle = 1 / defines.direction.south * math.pi
 
 local function trycatch(event, func)
     local success, err = pcall(func, event)
-    if not success then
+    if not success and not settings.global["blueprint-shotgun-wcp-disable-notifications"].value then
         game.print(err)
         log(err)
     end
